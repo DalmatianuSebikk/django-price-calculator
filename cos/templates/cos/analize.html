@@ -1,0 +1,52 @@
+{% extends 'cos/base.html' %}
+
+{% block content %}
+
+    <div class = "container">
+        <h1> Lista analize: </h1>
+        <br>
+        <br>
+        <center>
+        <form action = "filtru">
+            <select name = "categorie">
+                <option value ="HEMATOLOGIE" selected = "selected"> HEMATOLOGIE </option>
+                <option value ="BIOCHIMIE"> BIOCHIMIE </option>
+                <option value ="HORMONI"> HORMONI </option>
+                <option value ="IMUNOLOGIE"> IMUNOLOGIE </option>
+                <option value ="IMUNOLOGIE – MARKERI TUMORALI"> IMUNOLOGIE – MARKERI TUMORALI </option>
+                <option value ="IMUNOLOGIE – MARKERI INFECTIOSI"> IMUNOLOGIE – MARKERI INFECTIOSI </option>
+                <option value = "ANALIZE DE URINA" > ANALIZE DE URINA </option>
+                <option value ="EXAMENE MATERII FECALE"> EXAMENE MATERII FECALE </option>
+                <option value ="EXAMENE BACTERIOLOGICE"> EXAMENE BACTERIOLOGICE </option>
+                <option value ="EXAMENE DIN SECRETII VAGINALE / URETRALE"> EXAMENE DIN  SECRETII   VAGINALE / URETRALE </option>
+            </select>
+
+            <div style = "margin-top:10px"> </div>
+            <input type="submit" class="btn btn-danger" value = "Filtreaza >"> </input>
+        </form>
+        </center>
+        <br>
+        <table class = "table">
+                <thead>
+                    <tr>
+                        <th> Nume </th>
+                        <th> Pret </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.price }} </td>
+                            <td>
+                                
+                                <a class="btn btn-outline-success" style="font-size:30px" href="{% url 'cart_add' product.id %}"> <b>+</b> </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    
+                </tbody>
+        </table>
+    </div>
+
+{% endblock %}

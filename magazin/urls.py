@@ -21,7 +21,15 @@ from . import settings
 
 urlpatterns = [
     path('', views.home, name = 'Home'),
+    path('analize/', views.analize, name = 'analize'),
+    path('consultatii-si-echografii/', views.consultatii, name = 'consultatii'),
+    path('avize/', views.avize, name = 'avize'),
     path('admin/', admin.site.urls),
+
+
+    #PENTRU FILTRE
+    path('analize/filtru/', views.filtru, name = 'filtru'),
+    path('search/', views.search, name = 'search'),
 
     #PENTRU CUMPARATURI
     path('cart/add/<int:id>/', views.cart_add, name='cart_add'),

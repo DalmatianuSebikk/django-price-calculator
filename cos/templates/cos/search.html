@@ -3,11 +3,6 @@
 {% block content %}
 
 <div class = "container">
-    <br>
-    <br>
-    <h1> Investigatii: </h1>
-    <br>
-    <br>
     <table class = "table">
                     <thead>
                         <tr>
@@ -17,6 +12,7 @@
                     </thead>
                     <tbody>
                         {% for product in products %}
+                            {% if searchItem|lower in product.name|lower %}
                             <tr>
                                 <td>{{ product.name }}</td>
                                 <td>{{ product.price }} </td>
@@ -25,9 +21,11 @@
                                     <a class="btn btn-outline-success" style="font-size:30px" href="{% url 'cart_add' product.id %}"> <b>+</b> </a>
                                 </td>
                             </tr>
+                            {% endif %}
                         {% endfor %}
                         
                     </tbody>
     </table>
 </div>
+
 {% endblock %}

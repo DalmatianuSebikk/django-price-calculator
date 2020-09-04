@@ -6,10 +6,32 @@ from django import template
 
 register = template.Library()
 
-def home(request):
+def home(req):
     products = Product.objects.all()
-    return render(request, 'cos/home.html', {'products': products})
+    return render(req, 'cos/home.html', {'products': products})
 
+def analize(request):
+    products = Product.objects.filter(categorie='analiza')
+    return render(request, 'cos/analize.html', {'products': products})
+
+def consultatii(request):
+    products = Product.objects.all()
+    return render(request, 'cos/consultatii.html', {'products': products})
+
+def avize(request):
+    products = Product.objects.filter(categorie='aviz')
+    return render(request, 'cos/avize.html', {'products': products})
+
+
+def search(req):
+    searchItem = req.GET.get('search')
+    products = Product.objects.all()
+    return render(req, 'cos/search.html', {'searchItem': searchItem, 'products': products})
+
+def filtru(req):
+    categorie = req.GET.get('categorie')
+    products = Product.objects.filter(description=categorie)
+    return render(req, 'cos/filtru.html', {'products': products, 'categorie': categorie})
 
 def cart_add(request, id):
     cart = Cart(request)

@@ -1,0 +1,67 @@
+{% extends 'cos/base.html' %}
+
+{% block content %}
+
+    <div class = "container">
+        <br>
+        <br>
+        <h1> Consultatii: </h1>
+        <br>
+        <br>
+        <table class = "table">
+                <thead>
+                    <tr>
+                        <th> Nume </th>
+                        <th> Pret </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        {% if product.categorie == 'consultatie' %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.price }} </td>
+                            <td>
+                                
+                                <a class="btn btn-outline-success" style="font-size:30px" href="{% url 'cart_add' product.id %}"> <b>+</b> </a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                    
+                </tbody>
+        </table>
+        <div style = "margin-top: 20px"></div>
+        <br>
+        <br>
+        <h1> Echografii: </h1>
+        <br>
+        <br>
+        <table class = "table">
+                <thead>
+                    <tr>
+                        <th> Nume </th>
+                        <th> Pret </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        {% if product.categorie == 'echografie' %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.price }} </td>
+                            <td>
+                                
+                                <a class="btn btn-outline-success" style="font-size:30px" href="{% url 'cart_add' product.id %}"> <b>+</b> </a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                    
+                </tbody>
+        </table>
+        
+    </div>
+
+
+{% endblock %}

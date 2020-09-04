@@ -2,13 +2,14 @@
 
 {% block content %}
 
-<div class = "container">
-    <br>
-    <br>
-    <h1> Investigatii: </h1>
-    <br>
-    <br>
-    <table class = "table">
+    
+    <div class = "container">
+        <h1> {{ categorie }}: </h1>
+        <div style = "margin-top: 30px"></div>
+        <center><a href="{% url 'analize' %}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua calculul</a></center>
+        <div style = "margin-top: 30px"></div>
+        <br>
+        <table class = "table">
                     <thead>
                         <tr>
                             <th> Nume </th>
@@ -22,12 +23,13 @@
                                 <td>{{ product.price }} </td>
                                 <td>
                                     
-                                    <a class="btn btn-outline-success" style="font-size:30px" href="{% url 'cart_add' product.id %}"> <b>+</b> </a>
+                                    <a class="btn btn-outline-success" style="font-size:30px" href="{% url 'cart_add' product.id %}"><b> + </b></a>
                                 </td>
                             </tr>
                         {% endfor %}
                         
                     </tbody>
-    </table>
-</div>
+        </table>
+    </div>
+
 {% endblock %}

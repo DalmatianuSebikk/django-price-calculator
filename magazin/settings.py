@@ -26,7 +26,7 @@ SECRET_KEY = 'y+5(^)6*0zdw75c&iuy2z=qgm!5edj&fg#s$5&4ftl-d1(lhe$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['calculatorecomed.herokuapp.com']
+ALLOWED_HOSTS = ['investigatii.herokuapp.com']
 
 
 # Application definition

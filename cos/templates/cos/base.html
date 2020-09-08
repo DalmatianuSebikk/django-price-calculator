@@ -55,7 +55,10 @@
         </div>
         <div style ="margin-top:30px">
         <div class = "container">
+            {% if request.session.cart|length %}
             <h4>Cos: <mark style="color:red">{{request.session.cart|length}}</mark></h4>
+            <a class="btn btn-danger" href = "{% url 'cart_detail' %}"> Vezi cos </a>
+            {% endif %}
         </div>
         <div style ="margin-top:30px">
         {% block content %}

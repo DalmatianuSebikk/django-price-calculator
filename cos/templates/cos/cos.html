@@ -22,14 +22,14 @@
                         {% for key,value in request.session.cart.items %}
 
 						<tr>
-							<td data-th="Product">
+							<td data-th="Investigatie">
 								<div class="row">
 									<div class="col-sm-10">
 										<h4 class="nomargin">{{value.name}}</h4>
 									</div>
 								</div>
 							</td>
-							<td data-th="Price"> {{value.price}} RON </td>
+							<td data-th="Pret"> {{value.price}} RON </td>
 
 							<td class="actions" data-th="">
 								<a href="{% url 'item_clear' value.product_id %}" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>								

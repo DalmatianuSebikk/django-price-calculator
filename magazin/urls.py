@@ -16,26 +16,32 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
-from cos import views
+import cos
+import noutati
+
 from . import settings
 
 urlpatterns = [
-    path('', views.home, name = 'Home'),
-    path('analize/', views.analize, name = 'analize'),
-    path('consultatii-si-echografii/', views.consultatii, name = 'consultatii'),
-    path('avize/', views.avize, name = 'avize'),
+    path('', cos.views.home, name = 'Home'),
+    path('analize/', cos.views.analize, name = 'analize'),
+    path('consultatii-si-echografii/', cos.views.consultatii, name = 'consultatii'),
+    path('avize/', cos.views.avize, name = 'avize'),
     path('admin/', admin.site.urls),
 
 
     #PENTRU FILTRE
-    path('analize/filtru/', views.filtru, name = 'filtru'),
-    path('search/', views.search, name = 'search'),
+    path('analize/filtru/', cos.views.filtru, name = 'filtru'),
+    path('search/', cos.views.search, name = 'search'),
 
     #PENTRU CUMPARATURI
-    path('cart/add/<int:id>/', views.cart_add, name='cart_add'),
-    path('cart/item_clear/<int:id>/', views.item_clear, name='item_clear'),
-    path('cart/item_increment/<int:id>/', views.item_increment, name='item_increment'),
-    path('cart/item_decrement/<int:id>/', views.item_decrement, name='item_decrement'),
-    path('cart/cart_clear/', views.cart_clear, name='cart_clear'),
-    path('cart/cart-detail/',views.cart_detail,name='cart_detail'),
+    path('cart/add/<int:id>/', cos.views.cart_add, name='cart_add'),
+    path('cart/item_clear/<int:id>/', cos.views.item_clear, name='item_clear'),
+    path('cart/item_increment/<int:id>/', cos.views.item_increment, name='item_increment'),
+    path('cart/item_decrement/<int:id>/', cos.views.item_decrement, name='item_decrement'),
+    path('cart/cart_clear/', cos.views.cart_clear, name='cart_clear'),
+    path('cart/cart-detail/',cos.views.cart_detail,name='cart_detail'),
+
+
+    #PENTRU NOUTATI
+    path('noutati/', noutati.views.vezinoutati, name = "vezi_noutati"),
 ] + static(settings.STATIC_URL)

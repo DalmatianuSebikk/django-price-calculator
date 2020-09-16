@@ -5,5 +5,5 @@ class Product(models.Model):
     categorie = models.CharField(max_length = 100, default='investigatie')
     description = models.CharField(max_length = 100)
     price = models.FloatField()
-    explicatie = models.TextField(default = 'explicatie')
+    explicatie = models.TextField(blank = True, default = 'explicatie')
 

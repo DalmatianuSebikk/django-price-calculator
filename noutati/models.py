@@ -3,5 +3,5 @@ import datetime
 class Articol(models.Model):
     title = models.CharField (max_length = 200)
     date = models.DateField(default = datetime.date.today)
-    description = models.TextField()
+    description = models.TextField(default='descriere')
     image = models.ImageField(blank = True)

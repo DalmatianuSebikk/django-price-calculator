@@ -43,5 +43,5 @@ urlpatterns = [
 
 
     #PENTRU NOUTATI
-    path('noutati/', noutati.urls , name = "vezi_noutati"),
+    path('noutati/', include('noutati.urls'), name = "vezi_noutati"),
 ] + static(settings.STATIC_URL)

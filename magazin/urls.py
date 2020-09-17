@@ -32,7 +32,7 @@ urlpatterns = [
     #PENTRU FILTRE
     path('analize/filtru/', views.filtru, name = 'filtru'),
     path('search/', views.search, name = 'search'),
-    path('search-explicatii/', views.search, name = 'searchexplicatii'),
+    path('search-explicatii/', views.searchexplicatii, name = 'searchexplicatii'),
     #PENTRU CUMPARATURI
     path('cart/add/<int:id>/', views.cart_add, name='cart_add'),
     path('cart/item_clear/<int:id>/', views.item_clear, name='item_clear'),

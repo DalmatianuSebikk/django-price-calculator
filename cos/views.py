@@ -35,7 +35,7 @@ def search(req):
     return render(req, 'cos/search.html', {'searchItem': searchItem, 'products': products})
 
 def searchexplicatii(req):
-    searchItem = req.GET.get('search-explicatii')
+    searchItem = req.GET.get('search')
     products = Product.objects.filter(categorie = 'analiza')
     products = products.order_by('name')
     return render(req, 'cos/searchexplicatii.html', {'searchItem': searchItem, 'products': products})

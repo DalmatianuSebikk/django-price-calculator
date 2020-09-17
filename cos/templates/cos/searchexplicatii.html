@@ -3,6 +3,7 @@
 
 {% block container %}
 <div class="container">
+    {{searchItem}}
     {% for product in products %}
         {% if searchItem|lower in product.name|lower %}
             <h4> {{ product.name }} </h4>

@@ -4,11 +4,9 @@
 
 {% block content %}
     <div class = "container">
-        {% if analiza.categorie is 'analiza' %}
         <h3> Explicare analiza: {{ analiza.name }} </h3>
         <br>
         <h4> Categorie: {{ analiza.description }} </h4>
         <p> {{ analiza.explicatie }} </p>
-        {% endif %}
     </div>
 {% endblock %}

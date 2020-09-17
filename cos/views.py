@@ -6,6 +6,12 @@ from django import template
 
 register = template.Library()
 
+def explicatii(req):
+    products = Product.objects.filter(categorie = 'analiza')
+    products = products.order_by('name')
+    return render(req, 'cos/explicatii.html', {'products': products})
+
+
 def home(req):
     products = Product.objects.all()
     return render(req, 'cos/home.html', {'products': products})

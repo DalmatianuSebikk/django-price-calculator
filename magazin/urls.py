@@ -27,7 +27,7 @@ urlpatterns = [
     path('consultatii-si-echografii/', views.consultatii, name = 'consultatii'),
     path('avize/', views.avize, name = 'avize'),
     path('admin/', admin.site.urls),
-
+    path('explicatii/', views.explicatii, name = 'explicatii')
 
     #PENTRU FILTRE
     path('analize/filtru/', views.filtru, name = 'filtru'),

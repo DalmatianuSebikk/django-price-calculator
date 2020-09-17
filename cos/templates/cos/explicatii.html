@@ -3,25 +3,5 @@
 {% load static %}
 
 {% block content %}
-    <br>
-    <br>
-    <div class = "container">
-        <h3> Analize explicate: </h3>
-        <br>
-        <form class="form-inline mt-2 mt-md-0" action="{% url 'searchexplicatii'%}">
-                <h3> Cautare explicatii: </h3>
-                <input class="form-control mr-sm-2" name = "search" type="text" placeholder="Cautare" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cautare</button>
-        </form>
-        <center><a href="{% url 'Home' %}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua calculul</a></center>
-        <br>
-        <br>
-        {% for product in products %}
-            <h4> {{ product.name }} </h4>
-            <p> {{ product.explicatie }} </p>
-            <br>
-            <hr>
-        {% endfor %}
-    </div>
-    <br> <br>
+    <h1>{{ analiza.name }}</h1>
 {% endblock %}

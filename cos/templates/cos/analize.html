@@ -37,7 +37,7 @@
                 <tbody>
                     {% for product in products %}
                         <tr>
-                            <td>{{ product.name }}</td>
+                            <td><a href="{% url 'explicatie' %}">{{ product.name }}</a></td>
                             <td>{{ product.price }} RON </td>
                             <td>
                                 

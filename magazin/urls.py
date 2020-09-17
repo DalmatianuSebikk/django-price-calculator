@@ -27,12 +27,12 @@ urlpatterns = [
     path('consultatii-si-echografii/', views.consultatii, name = 'consultatii'),
     path('avize/', views.avize, name = 'avize'),
     path('admin/', admin.site.urls),
-    path('explicatii/', views.explicatii, name = 'explicatii'),
 
     #PENTRU FILTRE
     path('analize/filtru/', views.filtru, name = 'filtru'),
     path('search/', views.search, name = 'search'),
-    path('search-explicatii/', views.searchexplicatii, name = 'searchexplicatii'),
+    path('explicatie/<int:analiza_id>/', views.explicatie, name = 'explicatie'),
+
     #PENTRU CUMPARATURI
     path('cart/add/<int:id>/', views.cart_add, name='cart_add'),
     path('cart/item_clear/<int:id>/', views.item_clear, name='item_clear'),

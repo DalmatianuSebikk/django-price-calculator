@@ -1,16 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from cart.cart import Cart
 from .models import Product
 from django import template
 # Create your views here.
 
 register = template.Library()
-
-def explicatii(req):
-    products = Product.objects.filter(categorie = 'analiza')
-    products = products.order_by('name')
-    return render(req, 'cos/explicatii.html', {'products': products})
-
 
 def home(req):
     products = Product.objects.all()
@@ -19,6 +13,12 @@ def home(req):
 def analize(request):
     products = Product.objects.filter(categorie='analiza')
     return render(request, 'cos/analize.html', {'products': products})
+
+
+def explicatie(request, analiza_id):
+    analiza = get_object_or_404(Product, pk = analiza_id)
+    return render(request, 'cos/explicatii.html', {'analiza': analiza})
+
 
 def consultatii(request):
     products = Product.objects.all()
@@ -33,11 +33,6 @@ def search(req):
     searchItem = req.GET.get('search')
     products = Product.objects.all()
     return render(req, 'cos/search.html', {'searchItem': searchItem, 'products': products})
-
-def searchexplicatii(req):
-    searchItem = req.GET.get('search')
-    products = Product.objects.all()
-    return render(req, 'cos/searchexplicatii.html', {'searchItem': searchItem, 'products': products})
 
 def filtru(req):
     categorie = req.GET.get('categorie')

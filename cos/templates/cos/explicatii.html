@@ -3,5 +3,11 @@
 {% load static %}
 
 {% block content %}
-    <h1>{{ analiza.name }}</h1>
+    <div class = "container">
+        <h3> Explicare analiza: {{ analiza.name }} </h3>
+        <br>
+        <h4> Categorie: {{ analiza.categorie }} </h4>
+        <p> {{ analiza.explicatie }} </p>
+
+    </div>
 {% endblock %}

@@ -7,10 +7,10 @@
         <br>
         <center><a href="{% url 'Home' %}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Inapoi</a></center>
         <br>
-        <h3> Explicare analiza: {{ analiza.name }} </h3>
+        <h4> Explicare analiza: {{ analiza.name }} </h4>
         <br>
-        <h4> Categorie: {{ analiza.description }} </h4>
+        <h5> Categorie: {{ analiza.description }} </h5>
         <br>
-        <p> {{ analiza.explicatie }} </p>
+        <p style = "font-size: 16px"> {{ analiza.explicatie }} </p>
     </div>
 {% endblock %}

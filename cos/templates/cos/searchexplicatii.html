@@ -1,0 +1,16 @@
+{% extends 'cos/base.html' %}
+{% load static %}
+
+{% block container %}
+<div class="container">
+    {% for product in products %}
+        {% if searchItem|lower in product.name|lower %}
+            <h4> {{ product.name }} </h4>
+            <p> {{ product.explicatie }} </p>
+            <br>
+            <hr>
+        {% endif %}
+    {% endfor %}
+    <br> <br>
+</div>
+{% endblock %}

@@ -34,6 +34,12 @@ def search(req):
     products = Product.objects.all()
     return render(req, 'cos/search.html', {'searchItem': searchItem, 'products': products})
 
+def searchexplicatii(req):
+    searchItem = req.GET.get('search-explicatii')
+    products = Product.objects.filter(categorie = 'analiza')
+    products = products.order_by('name')
+    return render(req, 'cos/searchexplicatii.html', {'searchItem': searchItem, 'products': products})
+
 def filtru(req):
     categorie = req.GET.get('categorie')
     products = Product.objects.filter(description=categorie)

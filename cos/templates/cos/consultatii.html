@@ -44,7 +44,7 @@
                     {% for product in products %}
                         {% if product.categorie == 'echografie' %}
                         <tr>
-                            <td>{{ product.name }}</td>
+                            <td><a href="{% url 'explicatie' product.pk %}">{{ product.name }}</a></td>
                             <td>{{ product.price }} </td>
                             <td>
                                 

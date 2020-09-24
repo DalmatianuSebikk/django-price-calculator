@@ -61,8 +61,7 @@ def sendEmail(request):
         numeInv = numeInv + item["name"] + ", "
     
     mesaj = mesaj + " " + numeInv
-    mesaj = mesaj[:-2] + ". "
-    mesaj = mesaj + "Numarul meu de telefon este " + telefon 
+    mesaj = mesaj[:-2] + ". Numarul meu de telefon este: " + telefon 
     
     if destinatar and subiect and mesaj:
         email = EmailMessage(subiect, mesaj, to=[destinatar])

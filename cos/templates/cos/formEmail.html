@@ -10,12 +10,14 @@
         <h3> TRIMITE UN MAIL </h3> 
         
         <div class = "form-group">
-            <form action = "{% url 'sendEmail' %}" method = "POST">
+            <form action = "{% url 'sendEmail' %}" method = "POST" id="demoForm">
                 {% csrf_token %}
                 <br>
-                <input class="form-control mr-sm-2" name = "nume" type="text" placeholder="Nume" aria-label="Nume" min="3" max="30" required>
+                <input class="form-control mr-sm-2" name = "nume" type="text" placeholder="Nume" aria-label="Nume" maxlength="40"
+                        minlength="3"
+                        data-fv-string-length___message="Numele dumneavoastra trebuie sa aiba intre 5 si 40 de caractere" required>
                 <br>
-                <input class="form-control mr-sm-2" name = "telefon" type="text" placeholder="Telefon" aria-label="Telefon" required>
+                <input class="form-control mr-sm-2" name = "telefon" type="text" placeholder="Telefon" aria-label="Telefon" maxlength="15" minlength="10" data-fv-string-length___message="Numarul dumneavoastra de telefon trebuie sa aiba intre 5 si 40 de caractere" required>
                 <br>
                 <h3> Investigatii alese: </h3>
                 <br>

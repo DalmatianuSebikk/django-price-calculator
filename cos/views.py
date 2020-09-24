@@ -4,9 +4,11 @@ from .models import Product
 from django import template
 from django.core.mail import EmailMessage
 from django.http import HttpResponse, HttpResponseRedirect
-# Create your views here.
+
 
 register = template.Library()
+
+# -------------------- AFISAJ PAGINI PRINCIPALE --------------------
 
 def home(req):
     products = Product.objects.all()
@@ -40,11 +42,10 @@ def filtru(req):
     products = Product.objects.filter(description=categorie)
     return render(req, 'cos/filtru.html', {'products': products, 'categorie': categorie})
 
-
-# -------------EMAIL-------------------
-
 def formEmail(req):
     return render(req, 'cos/formEmail.html')
+
+# -------------EMAIL-------------------
 
 def sendEmail(request):
     cart_obj = Cart(request)
@@ -70,6 +71,9 @@ def sendEmail(request):
     else:
         return HttpResponse('NU')
 
+
+
+# ---------------- COS DE CUMPARATURI ---------------------
 
 def cart_add(request, id):
     cart = Cart(request)

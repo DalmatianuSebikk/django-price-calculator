@@ -2,6 +2,7 @@
  {% load static %}
 
 {% block content %}
+{% load cart_tag %}
 
 <div class = "container">
         <center>
@@ -15,7 +16,14 @@
                 <br>
                 <input class="form-control mr-sm-2" name = "telefon" type="text" placeholder="Telefon" aria-label="Telefon">
                 <br>
+                <h3> Investigatii alese: </h3>
+                <br>
+                {% for key,value in request.session.cart.items %}
+                    <h5> {{ value.name }} </h5>
+                    <br>
+                {% endfor %}
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Trimite</button>
+
             </form>
         </div>
     </div>

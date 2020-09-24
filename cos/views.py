@@ -41,15 +41,23 @@ def filtru(req):
     return render(req, 'cos/filtru.html', {'products': products, 'categorie': categorie})
 
 
-# EMAIL
+# -------------EMAIL-------------------
 
 def formEmail(req):
     return render(req, 'cos/formEmail.html')
 
 def sendEmail(request):
+    cart_obj = Cart(request)
+    nume = ""
+
     destinatar = request.POST.get('catre')
     subiect = request.POST.get('subiect')
     mesaj = request.POST.get('mesaj')
+
+    for product_id, item in cart_obj.cart.items():
+        nume = nume + item["name"] + " "
+    
+    mesaj = mesaj + " " + nume
     
     if destinatar and subiect and mesaj:
         email = EmailMessage(subiect, mesaj, to=[destinatar])

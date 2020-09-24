@@ -63,6 +63,7 @@
                 {% if request.session.cart|length %}
                     <h4>Cos: {{request.session.cart|length}}</h4>
                     <a class="btn btn-success" href = "{% url 'cart_detail' %}"> Vezi cos </a>
+                    <a class = "btn btn-warning" href = "{% url 'formEmail' %}"> Trimite mail </a>
                 {% endif %}
             </center>
         </div>

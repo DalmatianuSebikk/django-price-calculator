@@ -13,9 +13,9 @@
             <form action = "{% url 'sendEmail' %}" method = "POST">
                 {% csrf_token %}
                 <br>
-                <input class="form-control mr-sm-2" name = "nume" type="text" placeholder="Nume" aria-label="Nume" min="3" max="30" required>
+                <input class="form-control mr-sm-2" type="text" name = "nume" type="text" placeholder="Nume" aria-label="Nume" min="3" max="30" required>
                 <br>
-                <input class="form-control mr-sm-2" name = "telefon" type="text" placeholder="Telefon" aria-label="Telefon" min = "10" max ="20" required>
+                <input class="form-control mr-sm-2" type="number" name = "telefon" type="text" placeholder="Telefon" aria-label="Telefon" min = "10" max ="20" required>
                 <br>
                 <h3> Investigatii alese: </h3>
                 <br>

@@ -6,9 +6,9 @@
 {% load cart_tag %}
 
 <div class = "container">
-        <center>
-            <h1> TRIMITE UN MAIL </h1> 
-        </center>
+        
+        <h3> TRIMITE UN MAIL </h3> 
+        
         <div class = "form-group">
             <form action = "{% url 'sendEmail' %}" method = "POST">
                 {% csrf_token %}

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from cart.cart import Cart
 from .models import Product
 from django import template
+from django.core.mail import EmailMessage
+from django.http import HttpResponse, HttpResponseRedirect
 # Create your views here.
 
 register = template.Library()
@@ -18,7 +20,6 @@ def analize(request):
 def explicatie(request, analiza_id):
     analiza = get_object_or_404(Product, pk = analiza_id)
     return render(request, 'cos/explicatii.html', {'analiza': analiza})
-
 
 def consultatii(request):
     products = Product.objects.all()
@@ -38,6 +39,25 @@ def filtru(req):
     categorie = req.GET.get('categorie')
     products = Product.objects.filter(description=categorie)
     return render(req, 'cos/filtru.html', {'products': products, 'categorie': categorie})
+
+
+# EMAIL
+
+def formEmail(req):
+    return render(req, 'cos/formEmail.html')
+
+def sendEmail(request):
+    destinatar = request.POST.get('catre')
+    subiect = request.POST.get('subiect')
+    mesaj = request.POST.get('mesaj')
+    
+    if destinatar and subiect and mesaj:
+        email = EmailMessage(subiect, mesaj, to=[destinatar])
+        email.send()
+        return HttpResponse('Succes')
+    else:
+        return HttpResponse('NU')
+
 
 def cart_add(request, id):
     cart = Cart(request)

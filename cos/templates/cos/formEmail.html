@@ -1,0 +1,24 @@
+{% extends 'cos/base.html' %}
+ {% load static %}
+
+{% block content %}
+
+<div class = "container">
+        <center>
+            <h1> TRIMITE UN MAIL </h1> 
+        </center>
+        <div class = "form-group">
+            <form action = "{% url 'sendEmail' %}" method = "POST">
+                {% csrf_token %}
+                <input class="form-control mr-sm-2" name = "catre" type="text" placeholder="Catre" aria-label="Catre">
+                <br>
+                <input class="form-control mr-sm-2" name = "subiect" type="text" placeholder="Subiect" aria-label="Subiect">
+                <br>
+                <input class="form-control mr-sm-2" name = "mesaj" type="text" placeholder="Mesaj" aria-label="Mesaj">
+                <br>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Trimite</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

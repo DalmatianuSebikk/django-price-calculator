@@ -41,7 +41,11 @@ urlpatterns = [
     path('cart/cart_clear/', views.cart_clear, name='cart_clear'),
     path('cart/cart-detail/', views.cart_detail,name='cart_detail'),
 
+    #PENTRU TRIMIS MAIL 
+    path('email/', views.formEmail, name = 'formEmail'),
+    path('sendemail/', views.sendEmail, name = 'sendEmail'),
 
     #PENTRU NOUTATI
     path('noutati/', include('noutati.urls'), name = "vezi_noutati"),
+    
 ] + static(settings.STATIC_URL) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

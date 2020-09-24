@@ -58,7 +58,6 @@
             <center>
                 {% if request.session.cart|length %}
                     <h4>Cos: <mark style="color:red">{{request.session.cart|length}}</mark></h4>
-                    <br>
                     <a class="btn btn-success" href = "{% url 'cart_detail' %}"> Vezi cos </a>
                 {% endif %}
             </center>

@@ -48,16 +48,21 @@ def formEmail(req):
 
 def sendEmail(request):
     cart_obj = Cart(request)
-    nume = ""
+    numeInv = ""
 
-    destinatar = request.POST.get('catre')
-    subiect = request.POST.get('subiect')
-    mesaj = request.POST.get('mesaj')
+    destinatar = "sebastianionelbeats@gmail.com"
+    subiect = "Programare investigatii"
+    nume = request.POST.get('nume')
+    telefon = request.POST.get('telefon')
+
+    mesaj = "Buna ziua, ma numesc " + nume + " si as dori sa efectuez urmatoarele investigatii: "
 
     for product_id, item in cart_obj.cart.items():
-        nume = nume + item["name"] + " "
+        numeInv = numeInv + item["name"] + ", "
     
-    mesaj = mesaj + " " + nume
+    mesaj = mesaj + " " + numeInv
+    mesaj = mesaj[:-2] + ". "
+    mesaj = mesaj + "Numarul meu de telefon este " + telefon 
     
     if destinatar and subiect and mesaj:
         email = EmailMessage(subiect, mesaj, to=[destinatar])

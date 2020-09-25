@@ -25,8 +25,18 @@
                 <br>
 
                 <!-- DATA -->
-                <input class = "form-control" type = "date" name = "data" required>
-                <br>
+                <div>
+                    <input class = "form-control" type = "date" name = "data" placeholder="Data programarii" id ="datetimepicker1" required>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    <br>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker1').datetimepicker();
+                        });
+                    </script>
+                </div>
                 <!-- LOCATIA -->
                 <select class = "form-control" name = "locatie">
                     <option value = "DOROHOI"> DOROHOI </option>

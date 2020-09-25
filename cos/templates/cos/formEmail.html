@@ -25,15 +25,16 @@
                 <br>
 
                 <!-- DATA -->
-                <div>
-                    <input class = "form-control" type = "date" name = "data" placeholder="Data programarii" id ="datetimepicker1" required>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                    <br>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control" name = "data" placeholder = "Data programarii" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
                     <script type="text/javascript">
-                        $(document).ready(function(){
-                        $("#datetimepicker1").datepicker();
+                        $(function () {
+                            $('#datetimepicker1').datetimepicker();
                         });
                     </script>
                 </div>

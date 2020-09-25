@@ -74,9 +74,16 @@ def sendEmail(request):
     if destinatar and subiect and mesaj:
         email = EmailMessage(subiect, mesaj, to=[destinatar])
         email.send()
-        return render(request, 'cos/succes.html')
+        return redirect('emailSucces')
     else:
-        return HttpResponse('NU')
+        return redirect('eroareEmail')
+
+def emailsucces(request):
+    return render(request, 'cos/succes.html')
+
+def eroareEmail(request):
+    return render(request, 'cos/eroare.html')
+
 
 
 

@@ -44,7 +44,8 @@ urlpatterns = [
     #PENTRU TRIMIS MAIL 
     path('email/', views.formEmail, name = 'formEmail'),
     path('sendemail/', views.sendEmail, name = 'sendEmail'),
-
+    path('succes/', views.emailsucces, name = 'emailSucces'),
+    path('eroare-email/', views.eroareEmail, name = 'eroareEmail'),
     #PENTRU NOUTATI
     path('noutati/', include('noutati.urls'), name = "vezi_noutati"),
     

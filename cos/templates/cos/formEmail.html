@@ -32,11 +32,6 @@
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
                     </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#datetimepicker1').datetimepicker();
-                        });
-                    </script>
                 </div>
                 <!-- LOCATIA -->
                 <select class = "form-control" name = "locatie">
@@ -53,8 +48,13 @@
                 {% endfor %}
                 <br>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Trimite</button>
-
             </form>
+
+            <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker1').datetimepicker();
+                        });
+                    </script>
         </div>
     </div>
 

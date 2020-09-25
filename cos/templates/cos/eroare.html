@@ -1,0 +1,12 @@
+{% extends 'cos/base.html' %}
+
+{% load static %}
+{% block 'content' %}
+    <div class = "container">
+        <div class="alert alert-success" role="alert">
+            A aparut o eroare. Va rugam sa reverificati datele introduse. Daca problema persista, va rugam sa ne contactati.
+        </div>
+         <a class="btn btn-success" href = "{% url 'Home' %}"> Acasa </a>
+    </div>
+
+{% endblock %}

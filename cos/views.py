@@ -56,13 +56,14 @@ def sendEmail(request):
     nume = request.POST.get('nume')
     telefon = request.POST.get('telefon')
     locatie = request.POST.get('locatie')
+    data = request.POST.get('data')
 
     # FORMULAREA MESAJULUI
     mesaj = "Buna ziua, ma numesc " + nume + " si as dori sa efectuez urmatoarele investigatii: "
     for product_id, item in cart_obj.cart.items():
         numeInv = numeInv + item["name"] + ", "
     mesaj = mesaj + " " + numeInv
-    mesaj = mesaj[:-2] + ". Numarul meu de telefon este: " + telefon 
+    mesaj = mesaj[:-2] + ", pe data de " + data + ". Numarul meu de telefon este: " + telefon 
 
     # VERIFICARE LOCATIE
     if locatie == 'DOROHOI':

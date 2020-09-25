@@ -50,20 +50,27 @@ def formEmail(req):
 def sendEmail(request):
     cart_obj = Cart(request)
     numeInv = ""
-
-    destinatar = "sebastianionelbeats@gmail.com"
     subiect = "Programare investigatii"
+
+    # PRELUARE DATE
     nume = request.POST.get('nume')
     telefon = request.POST.get('telefon')
+    locatie = request.POST.get('locatie')
 
+    # FORMULAREA MESAJULUI
     mesaj = "Buna ziua, ma numesc " + nume + " si as dori sa efectuez urmatoarele investigatii: "
-
     for product_id, item in cart_obj.cart.items():
         numeInv = numeInv + item["name"] + ", "
-    
     mesaj = mesaj + " " + numeInv
     mesaj = mesaj[:-2] + ". Numarul meu de telefon este: " + telefon 
+
+    # VERIFICARE LOCATIE
+    if locatie == 'DOROHOI':
+        destinatar = "se3bofficial@gmail.com"
+    else:
+        destinatar = "sebastianionelbeats@gmail.com"
     
+    # FINALIZARE SI TRIMITERE
     if destinatar and subiect and mesaj:
         email = EmailMessage(subiect, mesaj, to=[destinatar])
         email.send()

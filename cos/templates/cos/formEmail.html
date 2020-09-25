@@ -13,12 +13,25 @@
             <form action = "{% url 'sendEmail' %}" method = "POST" id="demoForm">
                 {% csrf_token %}
                 <br>
+
+                <!-- NUME -->
                 <input class="form-control mr-sm-2" name = "nume" type="text" placeholder="Nume" aria-label="Nume" maxlength="40"
                         minlength="3"
                         data-fv-string-length___message="Numele dumneavoastra trebuie sa aiba intre 5 si 40 de caractere" required>
                 <br>
+
+                <!-- NUMAR DE TELEFON -->
                 <input class="form-control mr-sm-2" name = "telefon" type="text" placeholder="Telefon" aria-label="Telefon" maxlength="15" minlength="10" data-fv-string-length___message="Numarul dumneavoastra de telefon trebuie sa aiba intre 10 si 15 cifre" required>
                 <br>
+
+                <!-- LOCATIA -->
+                <select class = "form-control" name = "locatie">
+                    <option value = "DOROHOI"> DOROHOI </option>
+                    <option value = "BOTOSANI" selected = "selected"> BOTOSANI </option>
+                </select>
+                <br>
+
+                <!-- INVESTIGATII ALESE -->
                 <h3> Investigatii alese: </h3>
                 <br>
                 {% for key,value in request.session.cart.items %}

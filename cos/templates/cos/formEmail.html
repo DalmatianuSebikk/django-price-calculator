@@ -25,9 +25,9 @@
                 <br>
 
                 <!-- DATA -->
-                <input class="form-control mr-sm-2" name = "data" type = "date">
+                <input class="form-control mr-sm-2" name = "data" type = "text" id ="datepicker">
                 <br>
-                
+
                 <!-- LOCATIA -->
                 <select class = "form-control" name = "locatie">
                     <option value = "DOROHOI"> DOROHOI </option>
@@ -45,6 +45,11 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Trimite</button>
             </form>
         </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.datepicker').datepicker();
+            });
+        </script>
 </div>
 
 

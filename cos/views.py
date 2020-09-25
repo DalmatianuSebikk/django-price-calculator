@@ -74,7 +74,7 @@ def sendEmail(request):
     if destinatar and subiect and mesaj:
         email = EmailMessage(subiect, mesaj, to=[destinatar])
         email.send()
-        return HttpResponse('Succes')
+        return render(request, 'cos/succes.html')
     else:
         return HttpResponse('NU')
 
